@@ -1,23 +1,23 @@
 # 42-BSQ
 
-Group : pdal-mol & bsouleau\n
+Group : pdal-mol & bsouleau  
 Sujet : https://cdn.intra.42.fr/pdf/pdf/29155/fr.subject.pdf
 
 ## Cas particuliers
 
 ### Erreurs possibles
-> Si assez d'arguments
-> While de n arguments
-> Si le fichier est bien valide (Ouvrable ?)
-> Le fichier peut avoir n'importe quel nom
-> Fichier bien formatté
->> N = Nombre de lignes
->> . = Caractères vides
->> o = Obstacle
->> x = Caractère utilisé pour remplir en cas de carré
->>> 1 ère ligne : N.ox
->>> N ième ligne : ....o....
->> Si autre caractère : Map error
+> Si assez d'arguments  
+> While de n arguments  
+> Si le fichier est bien valide (Ouvrable ?)  
+> Le fichier peut avoir n'importe quel nom  
+> Fichier bien formatté  
+>> N = Nombre de lignes  
+>> . = Caractères vides  
+>> o = Obstacle  
+>> x = Caractère utilisé pour remplir en cas de carré  
+>>> 1 ère ligne : N.ox  
+>>> N ième ligne : ....o....  
+>> Si autre caractère : Map error  
 
 **PENSER A FREE**
 

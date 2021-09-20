@@ -4,7 +4,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-
 # define MAP_ERROR	"MAP ERROR\n"
 # define ARGS_ERROR	"ARGS ERROR\n"
 
@@ -16,8 +15,5 @@ int			ft_strlen(char *str);
 
 char		*ft_strcpy(char *dest, char *src);
 char		**ft_split(char *str, char *charset);
-
-# define ARGS_ERROR		"Arsg Error\n"
-# define MAP_ERROR		"Map Error\n"
 
 #endif

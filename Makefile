@@ -18,6 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -g3
 
 $(NAME): ${OBJS}
 		gcc ${CFLAGS} -o ${NAME} ${OBJS}
+		./generator.pl 9 9 3 > map
 
 all:	$(NAME)
 

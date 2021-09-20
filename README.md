@@ -1,6 +1,6 @@
 # 42-BSQ
 
-Group : pdal-mol & bsouleau
+Group : pdal-mol & bsouleau\n
 Sujet : https://cdn.intra.42.fr/pdf/pdf/29155/fr.subject.pdf
 
 ## Cas particuliers
@@ -15,8 +15,8 @@ Sujet : https://cdn.intra.42.fr/pdf/pdf/29155/fr.subject.pdf
 >> . = Caractères vides
 >> o = Obstacle
 >> x = Caractère utilisé pour remplir en cas de carré
->>> 1e ligne : N.ox
->>> Ne ligne : ....o....
+>>> 1 ère ligne : N.ox
+>>> N ième ligne : ....o....
 >> Si autre caractère : Map error
 
 **PENSER A FREE**

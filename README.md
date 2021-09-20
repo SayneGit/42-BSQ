@@ -9,14 +9,14 @@ Sujet : https://cdn.intra.42.fr/pdf/pdf/29155/fr.subject.pdf
 - Si assez d'arguments  
 - While de n arguments  
 - Si le fichier est bien valide (Ouvrable ?)  
--  Le fichier peut avoir n'importe quel nom  
+- Le fichier peut avoir n'importe quel nom  
 - Fichier bien formatté  
-	- N = Nombre de lignes  
-	- . = Caractères vides  
-	- o = Obstacle  
-	- x = Caractère utilisé pour remplir en cas de carré  
-		- 1 ère ligne : N.ox  
-		- N ième ligne : ....o....  
+	- **N** = Nombre de lignes  
+	- **.** = Caractères vides  
+	- **o** = Obstacle  
+	- **x** = Caractère utilisé pour remplir en cas de carré  
+		- **1 ère ligne** : N.ox  
+		- **N ième ligne** : ....o....  
 	- Si autre caractère : Map error  
 
 **PENSER A FREE**

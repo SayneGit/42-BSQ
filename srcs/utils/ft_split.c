@@ -3,109 +3,92 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsouleau <bsouleau@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: pdal-mol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 19:20:55 by bsouleau          #+#    #+#             */
-/*   Updated: 2021/09/21 15:37:08 by pdal-mol         ###   ########lyon.fr   */
+/*   Created: 2021/09/16 10:52:53 by pdal-mol          #+#    #+#             */
+/*   Updated: 2021/09/21 16:52:25 by pdal-mol         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../../includes/bsq.h"
 
-int	ft_is_in_charset(char *charset, char c)
+int	ft_is_charset(char c, char *str)
 {
 	int	i;
 
 	i = 0;
-	while (charset[i])
+	while (str[i])
 	{
-		if (charset[i] == c)
+		if (str[i] == c)
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-char	*ft_strndup(char *src, int n)
-{
-	char	*dest;
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
-	while (src[j])
-		j++;
-	dest = malloc((j + 1) * sizeof(char));
-	if (!dest)
-		return (NULL);
-	while (i < j && i < n)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-int	ft_len_word(char *str, char *charset)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] && !ft_is_in_charset(charset, str[i]))
-		i++;
-	return (i);
-}
-
-int	ft_count_words(char *str, char *charset)
+int	ft_arraylen(char *str, char *charset)
 {
 	int	i;
 	int	count;
+	int	letter_count;
 
 	i = 0;
-	count = 0;
+	count = 1;
+	letter_count = 0;
 	while (str[i])
 	{
-		while (str[i] && ft_is_in_charset(charset, str[i]))
-		{
-			i++;
-		}
-		if (str[i] && !ft_is_in_charset(charset, str[i]))
-		{
+		if (!ft_is_charset(str[i], charset))
+			letter_count++;
+		if (ft_is_charset(str[i], charset)
+			&& !ft_is_charset(str[i + 1], charset))
 			count++;
-			i += ft_len_word(&str[i], charset);
-		}
+		i++;
+	}
+	if (letter_count > 0)
+		return (count);
+	return (0);
+}
+
+int	ft_substrlen(char *str, char *charset)
+{
+	int	count;
+	int	i;
+
+	count = 0;
+	i = 0;
+	while (str[i] && !ft_is_charset(str[i], charset))
+	{
+		i++;
+		count++;
 	}
 	return (count);
 }
 
 char	**ft_split(char *str, char *charset)
 {
-	char	**split;
+	char	**out;
 	int		i;
 	int		j;
+	int		k;
 
 	i = 0;
 	j = 0;
-	split = malloc(sizeof (char *) * (ft_count_words(str, charset) + 1));
-	if (!split)
-		return (NULL);
-	while (i < ft_count_words(str, charset))
+	k = 0;
+	out = malloc((ft_arraylen(str, charset) + 1) * sizeof(*out));
+	if (!out)
+		return (0);
+	while (i < ft_strlen(str))
 	{
-		while (str[j] && ft_is_in_charset(charset, str[j]))
-			j++;
-		if (str[j])
-		{
-			split[i] = ft_strndup(&str[j], ft_len_word(&str[j], charset));
-			if (!split[i])
-				return (NULL);
-			j += ft_len_word(&str[j], charset);
-		}
-		i++;
+		while (ft_is_charset(str[i], charset))
+			i++;
+		out[j] = malloc((ft_substrlen(&str[i], charset) + 1) * sizeof(**out));
+		if (!out[j])
+			return (0);
+		k = 0;
+		while (ft_substrlen(&str[i], charset))
+			out[j][k++] = str[i++];
+		out[j++][k] = 0;
 	}
-	split[i] = malloc(1 * sizeof(char));
-	split[i] = 0;
-	return (split);
+	out[j] = 0;
+	return (out);
 }

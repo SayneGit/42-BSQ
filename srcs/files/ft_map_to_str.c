@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_buff_len.c                                      :+:      :+:    :+:   */
+/*   ft_map_to_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdal-mol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 19:30:11 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/09/21 16:27:12 by pdal-mol         ###   ########lyon.fr   */
+/*   Created: 2021/09/21 17:12:45 by pdal-mol          #+#    #+#             */
+/*   Updated: 2021/09/21 17:17:15 by pdal-mol         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../../includes/bsq.h"
 
-int	ft_buff_len(char *path)
+char	*ft_map_to_str(char *path)
 {
-	int		count;
-	char	buff[1];
 	int		fd;
+	int		ret;
+	char	*buff;
+	int		buff_len;
 
+	buff_len = ft_buff_len(path);
+	if (buff_len == -1)
+		return (NULL);
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
-		return (0);
-	count = 0;
-	while (read(fd, buff, 1))
-		count++;
+		return (NULL);
+	buff = malloc(sizeof(char) * (buff_len + 1));
+	if (!buff)
+		return (NULL);
+	ret = read(fd, buff, buff_len);
+	buff[ret] = '\0';
 	close(fd);
-	return (count);
+	return (buff);
 }

@@ -8,13 +8,15 @@ SOURCES 		= $(SOURCES_FOLDER)utils/ft_putchar.c \
 					$(SOURCES_FOLDER)utils/ft_strcpy.c \
 					$(SOURCES_FOLDER)utils/ft_strcmp.c \
 					$(SOURCES_FOLDER)files/ft_buff_len.c \
+					$(SOURCES_FOLDER)files/ft_map_to_str.c \
+					$(SOURCES_FOLDER)files/ft_map_to_matrice.c\
 					main.c
 
 OBJS = ${SOURCES:.c=.o} 
 
 CC      = gcc
 RM      = rm -f
-
+LEAKS	= leaks -atExit -- ./$(NAME)
 CFLAGS = -Wall -Wextra -Werror -g3 
 
 $(NAME): ${OBJS}
@@ -28,5 +30,8 @@ clean:
 
 fclean: clean
 		${RM} ${NAME}
+
+leaks:
+		$(LEAKS)
 
 re: 	fclean all

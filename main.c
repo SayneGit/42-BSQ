@@ -6,13 +6,13 @@
 /*   By: bsouleau <bsouleau@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 18:52:58 by bsouleau          #+#    #+#             */
-/*   Updated: 2021/09/21 15:52:07 by pdal-mol         ###   ########lyon.fr   */
+/*   Updated: 2021/09/21 17:16:02 by pdal-mol         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/bsq.h"
 #include <stdio.h>
-#define PATH "test_file"
+#define PATH "./map"
 
 int	main(int argc, char *argv[])
 {
@@ -25,9 +25,9 @@ int	main(int argc, char *argv[])
 		ft_putstr(ARGS_ERROR);
 		return (0);
 	}
-	
-	if(!ft_buff_len("test_file"))
-		ft_putstr("map error\n");
+
+//	printf("\n%s", ft_map_to_str(PATH));
+	printf("\n%s", ft_map_to_matrice(PATH)[0]);
 	// FREE HERE
 	return (0);
 }

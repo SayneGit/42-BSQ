@@ -6,11 +6,11 @@
 /*   By: bsouleau <bsouleau@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 19:20:40 by bsouleau          #+#    #+#             */
-/*   Updated: 2021/09/20 19:20:44 by bsouleau         ###   ########lyon.fr   */
+/*   Updated: 2021/09/21 15:37:38 by pdal-mol         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/utils.h"
+#include "../../includes/bsq.h"
 
 char	*ft_strcpy(char *dest, char *src)
 {

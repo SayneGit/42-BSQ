@@ -6,11 +6,11 @@
 /*   By: bsouleau <bsouleau@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 16:45:18 by bsouleau          #+#    #+#             */
-/*   Updated: 2021/09/20 19:05:52 by bsouleau         ###   ########lyon.fr   */
+/*   Updated: 2021/09/21 15:37:25 by pdal-mol         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/utils.h"
+#include "../../includes/bsq.h"
 
 int	ft_strcmp(char *s1, char *s2)
 

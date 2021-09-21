@@ -6,12 +6,12 @@
 /*   By: bsouleau <bsouleau@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 19:20:55 by bsouleau          #+#    #+#             */
-/*   Updated: 2021/09/20 19:20:56 by bsouleau         ###   ########lyon.fr   */
+/*   Updated: 2021/09/21 15:37:08 by pdal-mol         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "../../includes/utils.h"
+#include "../../includes/bsq.h"
 
 int	ft_is_in_charset(char *charset, char c)
 {

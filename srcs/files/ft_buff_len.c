@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_buff_len.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsouleau <bsouleau@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: pdal-mol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 19:20:48 by bsouleau          #+#    #+#             */
-/*   Updated: 2021/09/21 15:36:54 by pdal-mol         ###   ########lyon.fr   */
+/*   Created: 2021/09/20 19:30:11 by pdal-mol          #+#    #+#             */
+/*   Updated: 2021/09/21 15:43:32 by pdal-mol         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "../../includes/bsq.h"
 
-void	ft_putchar(char c)
+int	ft_buff_len(char *path)
 {
-	write(1, &c, 1);
+	int		count;
+	char	buff[1];
+	int		fd;
+
+	fd = open(path, O_RDONLY);
+	if (fd == -1)
+		return (0);
+	count = 0;
+	while (read(fd, buff, 1))
+		count++;
+	close(fd);
+	return (count);
 }

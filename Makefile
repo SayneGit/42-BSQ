@@ -7,7 +7,8 @@ SOURCES 		= $(SOURCES_FOLDER)utils/ft_putchar.c \
 					$(SOURCES_FOLDER)utils/ft_split.c \
 					$(SOURCES_FOLDER)utils/ft_strcpy.c \
 					$(SOURCES_FOLDER)utils/ft_strcmp.c \
-					$(SOURCES_FOLDER)main.c
+					$(SOURCES_FOLDER)files/ft_buff_len.c \
+					main.c
 
 OBJS = ${SOURCES:.c=.o} 
 
